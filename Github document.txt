@@ -1,0 +1,40 @@
+git config user.email "email"
+git config user.name "user"
+
+git config --get remote.origin.url
+
+sudo git push origin HEAD:main
+sudo git pull origin HEAD:main
+
+git checkout -b newbranch
+
+git push origin newbranch
+
+[12/3 4:18 PM] Shubham Alok
+    to check current branch:git branch
+Edited​[12/3 4:19 PM] Shubham Alok
+    git merge origin main --allow-unrelated-histories
+​[12/3 4:20 PM] Shubham Alok
+    git switch master
+​[12/3 4:22 PM] Shubham Alok
+    to check remote connection:git remote
+​[12/3 4:23 PM] Shubham Alok
+    git config --get remote.origin.url
+[12/3 4:28 PM] Shubham Alok
+    after merging push the changes
+​[12/3 4:34 PM] Shubham Alok
+    before changing to different branch created by other developer do git pull and then git checkout branchname
+
+git remote add origin https://github.com/devops-zuul/devops_pipeline_demo.git
+git branch -M main
+git push -u origin main
+
+echo "# devops_pipeline_demo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/devops-zuul/devops_pipeline_demo.git
+git push -u origin main
+
+when pushing new repository to git first add all files, commit them the add origin then push
