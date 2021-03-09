@@ -1,0 +1,43 @@
+Integrate Jenkins and Git
+e6aa75fba0b1e9f6744b46dbe49b96e82c56e435
+
+https://blog.tentamen.eu/jenkins-and-github-integration-using-webhooks/
+https://www.jenkins.io/doc/book/installing/docker/#accessing-the-jenkins-blue-ocean-docker-container
+https://docs.microsoft.com/en-us/azure/developer/jenkins/configure-on-linux-vm
+https://cloudaffaire.com/how-to-install-jenkins-in-aws-ec2-instance/
+https://gcube.wiki.gcube-system.org/gcube/GitHub/Jenkins:_Setting_up_Webhooks
+https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?client_id=c44b4083-3bb0-49c1-b47d-974e53cbdf3c&response_type=code%20id_token&scope=https%3A%2F%2Fmanagement.core.windows.net%2F%2Fuser_impersonation%20openid%20email%20profile&state=OpenIdConnect.AuthenticationProperties%3D3Z0zaj8X-dZSXofOm_9dIlPlvv3xTuBCsdd57Ak3Kgfw8hOh85p4KT3QxUGyFFQaAvr3ouuE0Tc16_EuswdkeR2caRdaFhJuJKgT5UoIWCn54arM2Fb4SiOI0FlNndufcDgOYjmurYFJCOmRaxPsGNu0u-kulqKKBx87B16tWl5p-_cx4Stbtqj36d14GwFxrgeVFVorMUNtc_2bz09GFQy3oiSoOXzkmsgfvg6HDa0PEGz8ej1gPXVuVxsOqzYc2XBXloPDr9G-oadey5myNY-iXUknegwwZ6UdJwrARRhT6eF0TF0Sg7LTLNfJSgOL87oYeC0qPHZo4PkbuleGAyfXkgDQSSA96-BIIac9UnwB9bgFQH9egUixfxhJP7w8Ccn-GUu1ofklzdSlDU4K55Z6rvkCc9QG6cwVUwIGLiA&response_mode=form_post&nonce=637418012872007532.MTI2ODljZTUtZTM2Mi00NmY1LWFkMWYtOTFiZWNkY2VmZTk3MDVlZGE5YTYtZGU1ZS00OTY4LTgyMjYtMDMxMTBiZjIwZjUw&redirect_uri=https%3A%2F%2Fportal.azure.com%2Fsignin%2Findex%2F&site_id=501430&client-request-id=f14f03b7-b104-47f6-8d40-ec94991d7fed&x-client-SKU=ID_NET45&x-client-ver=5.3.0.0
+
+
+used link for python application:- https://www.jenkins.io/doc/tutorials/build-a-python-app-with-pyinstaller/
+install docker :- https://docs.docker.com/engine/install/ubuntu/
+https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04
+Push image docker hub to repository :- 1. pull or build image check using command "docker images"
+                                       2. docker login
+									   3. Tag your image "docker tag <image name:version> <docker user name:image name>"  eg. docker tag hello-world:latest divyas5/hello-world
+									   4. Push your image to docker hub (check new image name using command docker images) "docker push <new image name> " eg. docker push divyas5/hello-world
+									   5. Check docker hub
+
+/var/lib/jenkins/workspace ---------all project
+/usr/lib/jvm -----------java path
+
+Complete CI/CD pipeline 
+1. Check java version :- java -version (openjdk version "1.8.0_275")
+2. If you insalled java version 1.7 then remove it :- yum removejava-1.7.0*
+3. for installing java :- find /usr/lib/jvm/java-1.8* | head -n 3
+4. Added java path in server and jenkins (enviornment set up) JAVA_HOME
+5. Install Jenkins :- https://docs.microsoft.com/en-us/azure/developer/jenkins/configure-on-linux-vm
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
+https://www.guru99.com/download-install-jenkins.html
+6. Create one simple echo job(freestyle)
+7. Git and Jenkins integration:- pre-requisites
+                                1. Install git package on server :- yum install git -y
+                                2. Install git plugin :- manage jenkins---jenkins plugin-----avaiable-----github
+                                3. Configure git path :- manage jenkins----global tool configuration------git
+								4. Install git on linux :- https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/
+8. Install Maven :-  Install maven on ubuntu 18.04 :- https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
+                               1. Download maven for linux and windows:- https://maven.apache.org/download.cgi
+                               2. For windows zip file and setup enviornment variable (MAVEN_HOME AND M2_HOME)
+							   3. For linux tar file and setup .bash_profile and configure global tool configuration (add maven path)
+							   4. Install requried plugin :- maven invoke and maven integration 
+
